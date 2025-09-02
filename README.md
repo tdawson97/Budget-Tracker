@@ -23,8 +23,13 @@ This is an ASP.NET Core MVC web application that allows user to keep track of th
 ## Screenshots
 
 ### Home
+![](/screenshots/homepage.png)
 ### Expense Table
+![](/screenshots/expenses.png)
 ### Dashboard
+![](/screenshots/dashboard.png)
+### Summary
+![](/screenshots/summary.png)
 
 ## Author
 
