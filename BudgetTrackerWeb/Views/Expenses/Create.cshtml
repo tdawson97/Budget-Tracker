@@ -1,0 +1,38 @@
+@model BudgetTrackerWeb.Models.Expense
+<div>
+  <form asp-action="Create" method="post">
+    <fieldset>
+      <legend>Add Expense</legend>
+      <div>
+        <label asp-for="Date">Date:</label>
+        <input asp-for="Date" type="date" value="" class="form-control" />
+      </div>
+      <div>
+        <label asp-for="Category">Category:</label>
+        <select asp-for="Category" class="form-control">
+          <option value="">&nbsp;</option>
+          <option value="Housing">Housing</option>
+          <option value="Utilities">Utilities</option>
+          <option value="Transportation">Transportation</option>
+          <option value="Food">Food</option>
+          <option value="Insurance">Insurance</option>
+          <option value="Debt Payments">Debt Payments</option>
+          <option value="Health and Medical">Health and Medical</option>
+          <option value="Personal Spending">Personal Spending</option>
+          <option value="Entertainment and Recreation">Entertainment and Recreation</option>
+          <option value="Savings and Investments">Savings and Investments</option>
+          <option value="Miscellaneous">Miscellaneous</option>
+        </select>
+      </div>
+      <div>
+        <label asp-for="Description">Description:</label>
+        <input asp-for="Description" type="text" value="" class="form-control" />
+      </div>
+      <div>
+        <label asp-for="Amount">Amount:</label>
+        <input asp-for="Amount" type="number" value="" class="form-control" />
+      </div>
+        <input type="submit" value="Submit" class="btn btn-primary" />
+    </fieldset>
+  </form>
+</div>
