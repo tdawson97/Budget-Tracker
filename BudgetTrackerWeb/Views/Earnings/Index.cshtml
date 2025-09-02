@@ -1,6 +1,5 @@
-@using Microsoft.AspNetCore.Http.Features
-@model List<BudgetTrackerWeb.Models.Expense>
-<h2>Expenses</h2>
+@model List<BudgetTrackerWeb.Models.Earning>
+<h2>Earnings</h2>
 <div>
   <table class="table table-striped table-bordered text-center">
     <thead class="table-dark">
@@ -12,15 +11,15 @@
       </tr>
     </thead>
     <tbody>
-      @foreach (var expense in Model)
+      @foreach (var earning in Model)
       {
         <tr>
-          <td>@expense.Date.ToShortDateString()</td>
-          <td>@expense.Category</td>
-          <td>@expense.Description</td>
-          <td>@expense.Amount.ToString("C")</td>
+          <td>@earning.Date.ToShortDateString()</td>
+          <td>@earning.Category</td>
+          <td>@earning.Description</td>
+          <td>@earning.Amount.ToString("C")</td>
           <td>
-            <form asp-action="Delete" asp-route-id="@expense.Id" method="post" style="display:inline">
+            <form asp-action="Delete" asp-route-id="@earning.Id" method="post" style="display:inline">
               <button type="submit" class="btn btn-sm btn-danger"
                 onclick="return confirm('Are you sure you want to delete this expense?');">
             Delete
@@ -38,4 +37,4 @@
     </tbody>
   </table>
 </div>
-<a href="/Expenses/Create">Add Expense</a>
+<a href="/Earnings/Create">Add Earning</a>

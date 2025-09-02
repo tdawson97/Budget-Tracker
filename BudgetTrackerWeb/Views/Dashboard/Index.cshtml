@@ -1,0 +1,73 @@
+@{
+    ViewData["Title"] = "Dashboard";
+    int selectedMonth = ViewBag.SelectedMonth ?? 0;
+}
+
+<form method="get" class="mb-3">
+    <label>Year:</label>
+    <input type="number" name="year" value="@ViewBag.SelectedYear" min="2000" max="2100" />
+
+    <label>Month:</label>
+    <select name="month">
+        <option value="">All</option>
+        @for (int i = 1; i <= 12; i++)
+        {
+            <option value="@i" selected="@(selectedMonth == i ? "selected" : null)">@i</option>
+        }
+    </select>
+
+    <button type="submit" class="btn btn-primary btn-sm">Filter</button>
+</form>
+
+<h1>Budget Dashboard</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card text-white bg-danger mb-3">
+            <div class="card-header">Total Expenses</div>
+            <div class="card-body">
+                <h5 class="card-title">@ViewBag.TotalExpenses.ToString("C")</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-header">Total Earnings</div>
+            <div class="card-body">
+                <h5 class="card-title">@ViewBag.TotalEarnings.ToString("C")</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card text-white bg-primary mb-3">
+            <div class="card-header">Net Balance</div>
+            <div class="card-body">
+                <h5 class="card-title">@ViewBag.NetBalance.ToString("C")</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<h2>Net Balance Over Time</h2>
+<canvas id="netBalanceChart" width="400" height="150"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+var ctx = document.getElementById('netBalanceChart').getContext('2d');
+new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: @Html.Raw(Json.Serialize(ViewBag.NetLabels)),
+        datasets: [{
+            label: 'Net Balance',
+            data: @Html.Raw(Json.Serialize(ViewBag.NetValues)),
+            borderColor: 'rgba(75, 192, 192, 1)',
+            fill: false
+        }]
+    }
+});
+</script>
+

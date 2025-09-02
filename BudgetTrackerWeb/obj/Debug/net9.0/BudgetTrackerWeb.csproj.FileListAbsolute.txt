@@ -83,8 +83,6 @@ C:\Users\Tanne\OneDrive\Desktop\RandomProjects\Budget-Tracker\BudgetTrackerWeb\o
 C:\Users\Tanne\OneDrive\Desktop\RandomProjects\Budget-Tracker\BudgetTrackerWeb\obj\Debug\net9.0\compressed\vuop7b93b1-muycvpuwrr.gz
 C:\Users\Tanne\OneDrive\Desktop\RandomProjects\Budget-Tracker\BudgetTrackerWeb\obj\Debug\net9.0\compressed\8hlxsg47c0-87fc7y1x7t.gz
 C:\Users\Tanne\OneDrive\Desktop\RandomProjects\Budget-Tracker\BudgetTrackerWeb\obj\Debug\net9.0\compressed\umh4n554ld-mlv21k5csn.gz
-C:\Users\Tanne\OneDrive\Desktop\RandomProjects\Budget-Tracker\BudgetTrackerWeb\obj\Debug\net9.0\compressed\vkntvsyckj-n5wwlmsf3x.gz
-C:\Users\Tanne\OneDrive\Desktop\RandomProjects\Budget-Tracker\BudgetTrackerWeb\obj\Debug\net9.0\compressed\r0jcq5ghw0-n5wwlmsf3x.gz
 C:\Users\Tanne\OneDrive\Desktop\RandomProjects\Budget-Tracker\BudgetTrackerWeb\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\Tanne\OneDrive\Desktop\RandomProjects\Budget-Tracker\BudgetTrackerWeb\obj\Debug\net9.0\staticwebassets.build.json.cache
 C:\Users\Tanne\OneDrive\Desktop\RandomProjects\Budget-Tracker\BudgetTrackerWeb\obj\Debug\net9.0\staticwebassets.development.json
@@ -217,3 +215,6 @@ C:\Users\Tanne\OneDrive\Desktop\RandomProjects\Budget-Tracker\BudgetTrackerWeb\b
 C:\Users\Tanne\OneDrive\Desktop\RandomProjects\Budget-Tracker\BudgetTrackerWeb\bin\Debug\net9.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\Tanne\OneDrive\Desktop\RandomProjects\Budget-Tracker\BudgetTrackerWeb\bin\Debug\net9.0\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\Tanne\OneDrive\Desktop\RandomProjects\Budget-Tracker\BudgetTrackerWeb\obj\Debug\net9.0\BudgetTr.C3EC9847.Up2Date
+C:\Users\Tanne\OneDrive\Desktop\RandomProjects\Budget-Tracker\BudgetTrackerWeb\obj\Debug\net9.0\BudgetTrackerWeb.sourcelink.json
+C:\Users\Tanne\OneDrive\Desktop\RandomProjects\Budget-Tracker\BudgetTrackerWeb\obj\Debug\net9.0\compressed\vkntvsyckj-n5wwlmsf3x.gz
+C:\Users\Tanne\OneDrive\Desktop\RandomProjects\Budget-Tracker\BudgetTrackerWeb\obj\Debug\net9.0\compressed\r0jcq5ghw0-n5wwlmsf3x.gz

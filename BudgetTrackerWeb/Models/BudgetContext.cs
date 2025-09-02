@@ -9,5 +9,6 @@ namespace BudgetTrackerWeb.Models
     {
     }
     public DbSet<Expense> Expenses { get; set; }
+    public DbSet<Earning> Earnings { get; set; }
   }
 }

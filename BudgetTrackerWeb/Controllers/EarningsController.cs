@@ -7,39 +7,37 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BudgetTrackerWeb.Controllers
 {
-  public class ExpensesController : Controller
+  public class EarningsController : Controller
   {
     private readonly BudgetContext _context;
-    public ExpensesController(BudgetContext context)
+    public EarningsController(BudgetContext context)
     {
       _context = context;
     }
 
-    // Fetch data for the expenses table
+    // Fetch data for the earnings table
     public async Task<IActionResult> Index()
     {
-      var expenses = await _context.Expenses.ToListAsync();
-      var totalAmount = expenses.Sum(e => e.Amount);
+      var earnings = await _context.Earnings.ToListAsync();
+      var totalAmount = earnings.Sum(e => e.Amount);
       ViewBag.TotalAmount = totalAmount;
-      return View(expenses);
+      return View(earnings);
     }
 
     public IActionResult Create()
     {
       return View();
     }
-
-    // Adding a new expense
     [HttpPost]
-    public async Task<IActionResult> Create(Expense expense)
+    public async Task<IActionResult> Create(Earning earning)
     {
       if (ModelState.IsValid)
       {
-        _context.Expenses.Add(expense);
+        _context.Earnings.Add(earning);
         await _context.SaveChangesAsync();
         return RedirectToAction(nameof(Index));
       }
-      return View(expense);
+      return View(earning);
     }
 
     // POST: Delete id
@@ -47,10 +45,10 @@ namespace BudgetTrackerWeb.Controllers
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Delete(int id)
     {
-      var expense = await _context.Expenses.FindAsync(id);
-      if (expense != null)
+      var earning = await _context.Earnings.FindAsync(id);
+      if (earning != null)
       {
-        _context.Expenses.Remove(expense);
+        _context.Earnings.Remove(earning);
         await _context.SaveChangesAsync();
       }
       return RedirectToAction(nameof(Index));
