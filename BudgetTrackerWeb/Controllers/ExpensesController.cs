@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using BudgetTrackerWeb.Models;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BudgetTrackerWeb.Controllers
 {
@@ -16,17 +17,39 @@ namespace BudgetTrackerWeb.Controllers
     }
 
     // Fetch data for the expenses table
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult> Index(string searchString, string categoryFilter)
     {
-      var expenses = await _context.Expenses.ToListAsync();
-      var totalAmount = expenses.Sum(e => e.Amount);
+      var expenses = from e in _context.Expenses select e;
+
+      if (!string.IsNullOrEmpty(searchString))
+      {
+        expenses = expenses.Where(e => e.Description.Contains(searchString));
+      }
+
+      if (!string.IsNullOrEmpty(categoryFilter))
+      {
+        expenses = expenses.Where(e => e.Category == categoryFilter);
+      }
+
+      ViewBag.CategoryList = new SelectList(
+        await _context.Expenses.Select(e => e.Category).Distinct().ToListAsync()
+      );
+
+      var expensesList = await expenses.ToListAsync();
+      var totalAmount = expensesList.Sum(e => e.Amount);
       ViewBag.TotalAmount = totalAmount;
-      return View(expenses);
+      return View(expensesList);
     }
 
     public IActionResult Create()
     {
       return View();
+    }
+
+    public async Task<IActionResult> Edit(int id)
+    {
+      var expense = await _context.Expenses.FindAsync(id);
+      return View(expense);
     }
 
     // Adding a new expense
@@ -51,6 +74,20 @@ namespace BudgetTrackerWeb.Controllers
       if (expense != null)
       {
         _context.Expenses.Remove(expense);
+        await _context.SaveChangesAsync();
+      }
+      return RedirectToAction(nameof(Index));
+    }
+
+    //POST: Edit id
+    [HttpPost, ActionName("Edit")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Edit(Expense expenseEdit)
+    {
+      var expense = await _context.Expenses.FindAsync(expenseEdit.Id);
+      if (expense != null)
+      {
+        _context.Entry(expense).CurrentValues.SetValues(expenseEdit);
         await _context.SaveChangesAsync();
       }
       return RedirectToAction(nameof(Index));

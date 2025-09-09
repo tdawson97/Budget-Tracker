@@ -40,12 +40,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWFybmluZ3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Tanne/OneDrive/Desktop/RandomProjects/Budget-Tracker/BudgetTrackerWeb/Views/Earnings/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWFybmluZ3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Tanne/OneDrive/Desktop/RandomProjects/Budget-Tracker/BudgetTrackerWeb/Views/Earnings/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWFybmluZ3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Tanne/OneDrive/Desktop/RandomProjects/Budget-Tracker/BudgetTrackerWeb/Views/Expenses/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZW5zZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Tanne/OneDrive/Desktop/RandomProjects/Budget-Tracker/BudgetTrackerWeb/Views/Expenses/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZW5zZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Tanne/OneDrive/Desktop/RandomProjects/Budget-Tracker/BudgetTrackerWeb/Views/Expenses/Index.cshtml]
