@@ -4,8 +4,9 @@ This is an ASP.NET Core MVC web application that allows user to keep track of th
 
 ## Features
 
-* Add and Delete expenses and earnings
+* Add, Edit, and Delete expenses and earnings
 * Categorize expenses (Food, Transportation, Housing, etc.) and earnings (Wages, Dividends, Gifts, etc.)
+* Filter Expense and Earning tables by categories and descriptions of entries
 * Dashboard with visual summaries:
   * Expense and Earning breakdown by category
   * Net balance over time
